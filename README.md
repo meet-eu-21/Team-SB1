@@ -24,7 +24,7 @@ main code works correctly !)
 - sklearn (https://scikit-learn.org/stable/)
 - scipy ( https://scipy.org/)
 - standard Python libraries ( pandas, numpy, matplotlib,seaborn)
-- 
+
 We installed the specific tools via Anaconda (https://www.anaconda.com/products/individual)
 using conda install command in the Anaconda prompt.
 
