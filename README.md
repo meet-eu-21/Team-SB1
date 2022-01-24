@@ -38,6 +38,8 @@ Datasets:
 Please search for the datasets of your interest here: http://www.lcqb.upmc.fr/meetu/
 
 Results visualisation:
+
 Authors and acknowledgments:
-Oktawia Scibior, Mikal DAOU, Maxime GUEUDRE
+Oktawia SCIBIOR, Mikal DAOU, Maxime GUEUDRE
+
 Credits to: Léopold Carron
