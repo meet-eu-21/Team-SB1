@@ -1,14 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
 
 
-#python 3
-#2019-2020
-#CC-By-SA
-#Carron Leopold
-#specific utils tools for hic need
+
+
+#The Hi-C toll box is basically entire copy selected fonctions from of Leopold Carron Hi-C tool box with some tiny adapations
+
 
 import h5py
 import numpy as np
@@ -73,36 +68,6 @@ def bin2d(Data,p,q):
 
 
 
-def bin1D(anumpyarray,resolutionfrom,resolutionto):
-	"""
-	in : A numpy array , number of bin in raw and in col
-	out : the matrix binned
-	"""
-	print(resolutionto,resolutionfrom)
-	if resolutionto>resolutionfrom:
-		convertionfactor=np.ceil(resolutionto/resolutionfrom)
-		s=anumpyarray.shape
-		print("dimension du vecteur:",s)
-		#has to be identical as result in other function like chrsizedict)
-		newsizei=np.ceil(s[0]*resolutionfrom/resolutionto)
-		newarray=np.zeros(int(newsizei))
-		print("taille du vecteur appres rescale :",newarray.shape)
-		i=0
-		while i<newsizei:
-			ifrom=int(i*convertionfactor)
-			ito=int((i+1)*convertionfactor)
-			if i==newsizei-1:
-				asum=np.sum(anumpyarray[ifrom:])
-			else:
-				asum=np.sum(anumpyarray[ifrom:ito])
-			newarray[i]=asum
-			i+=1
-		return newarray
-	elif resolutionto==resolutionfrom:
-		print("no binning")
-		return anumpyarray
-	else:
-		print("wrong resolution parameter in bin1D")
 
 def bin2dfullmat(anumpyarray,resolutionfrom,resolutionto):
 	"""
@@ -178,7 +143,7 @@ def fastFloyd(contact):
 	return shortest
 
 
-def filteramat(Hicmat,Filterextremum=True,factor=1.5):
+def filteramat(Hicmat,factor,Filterextremum=True):
 	"""
 	in : a HiCmat without any transformation, factor of reduction
 	out : the HiCmatreduce,thevector of his transformation
